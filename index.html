@@ -1,46 +1,564 @@
-<!DOCTYPE HTML>
-<!--
-	Eventually by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Eventually by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
 
-		<!-- Header -->
-			<header id="header">
-				<h1>nkngyftd</h1>
-				<p>A simple template for telling the world when you'll launch<br />
-				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
-			</header>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Signup Form -->
-			<form id="signup-form" method="post" action="#">
-				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="submit" value="Sign Up" />
-			</form>
+```
+<meta name="description" content="Sufyan — Frontend Developer. Портфолио, проекты и навыки.">
+<meta name="author" content="Sufyan">
+<meta name="theme-color" content="#0a0a0a">
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
+<title>Sufyan — Frontend Developer</title>
 
-		<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
+<style>
+    :root {
+        --bg: #080808;
+        --bg-soft: #101010;
+        --card: rgba(255, 255, 255, 0.045);
+        --border: rgba(255, 255, 255, 0.1);
+        --text: #f5f5f5;
+        --muted: #9a9a9a;
+        --accent: #ffffff;
+        --accent-dark: #111111;
+        --green: #3fb950;
+    }
 
-	</body>
-</html>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        background:
+            radial-gradient(
+                circle at 50% -10%,
+                rgba(255,255,255,0.09),
+                transparent 35%
+            ),
+            var(--bg);
+
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .container {
+        width: min(1100px, calc(100% - 40px));
+        margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        background: rgba(8, 8, 8, 0.72);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    nav {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
+
+    .logo span {
+        color: #777;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--text);
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 80px;
+    }
+
+    .hero-content {
+        max-width: 820px;
+    }
+
+    .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+
+        padding: 8px 13px;
+        margin-bottom: 25px;
+
+        border: 1px solid var(--border);
+        border-radius: 999px;
+
+        background: rgba(255,255,255,0.035);
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 12px rgba(63,185,80,0.7);
+    }
+
+    h1 {
+        font-size: clamp(48px, 8vw, 92px);
+        line-height: 0.98;
+        letter-spacing: -4px;
+        margin-bottom: 28px;
+    }
+
+    h1 span {
+        color: #777;
+    }
+
+    .hero-text {
+        max-width: 650px;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.7;
+        margin-bottom: 35px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 13px 20px;
+
+        border-radius: 10px;
+        border: 1px solid var(--border);
+
+        font-size: 14px;
+        font-weight: 600;
+
+        transition: 0.25s ease;
+    }
+
+    .btn-primary {
+        background: var(--accent);
+        color: var(--accent-dark);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        background: #ddd;
+    }
+
+    .btn-secondary {
+        color: var(--text);
+        background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        background: rgba(255,255,255,0.08);
+    }
+
+    /* SECTIONS */
+
+    section {
+        padding: 100px 0;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .section-label {
+        display: block;
+        color: #777;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+        font-size: clamp(32px, 5vw, 48px);
+        letter-spacing: -2px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 30px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .card p {
+        color: var(--muted);
+    }
+
+    /* SKILLS */
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .skill {
+        padding: 9px 14px;
+        border-radius: 999px;
+
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.035);
+
+        color: #ddd;
+        font-size: 14px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .project {
+        position: relative;
+        overflow: hidden;
+
+        padding: 30px;
+
+        border: 1px solid var(--border);
+        border-radius: 18px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.07),
+                rgba(255,255,255,0.02)
+            );
+
+        transition: 0.3s ease;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255,255,255,0.22);
+    }
+
+    .project-number {
+        color: #555;
+        font-size: 13px;
+        margin-bottom: 35px;
+    }
+
+    .project h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .project p {
+        color: var(--muted);
+        margin-bottom: 25px;
+    }
+
+    .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .project-link:hover {
+        text-decoration: underline;
+    }
+
+    /* GITHUB */
+
+    .github-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        padding: 35px;
+
+        border-radius: 20px;
+        border: 1px solid var(--border);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,0.07),
+                rgba(255,255,255,0.02)
+            );
+    }
+
+    .github-card h3 {
+        font-size: 27px;
+        margin-bottom: 8px;
+    }
+
+    .github-card p {
+        color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact {
+        text-align: center;
+        padding-bottom: 130px;
+    }
+
+    .contact h2 {
+        font-size: clamp(40px, 7vw, 70px);
+        letter-spacing: -3px;
+        margin-bottom: 18px;
+    }
+
+    .contact p {
+        color: var(--muted);
+        margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        border-top: 1px solid var(--border);
+        padding: 25px 0;
+        color: #666;
+        font-size: 13px;
+    }
+
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    /* ANIMATION */
+
+    .fade {
+        animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+        .container {
+            width: min(100% - 28px, 1100px);
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        h1 {
+            letter-spacing: -2.5px;
+        }
+
+        .hero-text {
+            font-size: 17px;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .about-grid,
+        .projects {
+            grid-template-columns: 1fr;
+        }
+
+        .github-card {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        footer .container {
+            flex-direction: column;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">szenedinov<span>.</span></a>
+
+```
+        <ul class="nav-links">
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+</div>
+```
+
+</header>
+
+<main>
+
+```
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content fade">
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Frontend Developer
+            </div>
+
+            <h1>
+                Привет, я<br>
+                <span>Суфьян.</span>
+            </h1>
+
+            <p class="hero-text">
+                Создаю современные сайты и веб-интерфейсы.
+                Люблю чистый код, минималистичный дизайн
+                и превращать идеи в работающие проекты.
+            </p>
+
+            <div class="buttons">
+                <a
+                    class="btn btn-primary"
+                    href="#projects"
+                >
+                    Смотреть проекты →
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://github.com/szenedinov"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <span class="section-label">01 / About</span>
+            <h2>Обо мне</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="card">
+                <h3>Frontend Developer</h3>
+
+                <p>
+                    Разрабатываю интерфейсы с использованием
+                    HTML, CSS и JavaScript. Мне нравится создавать
+                    понятные, быстрые и визуально аккуратные сайты.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Мой подход</h3>
+
+                <p>
+                    Стараюсь писать структурированный код,
+                    уделяю внимание адаптивности и деталям
+```
